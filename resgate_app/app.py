@@ -8,11 +8,10 @@ from transformadores import ExtrairTitulo  # necessário para carregar o pickle
 st.set_page_config(page_title='Resgate SpaceTec-Info EAJ', page_icon='🚀')
 
 
-@st.cache_resource
-
 BASE_DIR = Path(__file__).resolve().parent
 CAMINHO_MODELO = BASE_DIR / "modelo_resgate.pkl"
 
+@st.cache_resource
 def carregar_modelo():
     return joblib.load(CAMINHO_MODELO)
 
