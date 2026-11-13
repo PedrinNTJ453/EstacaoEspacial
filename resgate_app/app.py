@@ -8,8 +8,12 @@ st.set_page_config(page_title='Resgate SpaceTec-Info EAJ', page_icon='🚀')
 
 
 @st.cache_resource
+
+BASE_DIR = Path(__file__).resolve().parent
+CAMINHO_MODELO = BASE_DIR / "modelo_resgate.pkl"
+
 def carregar_modelo():
-    return joblib.load('modelo_resgate.pkl')
+    return joblib.load(CAMINHO_MODELO)
 
 
 modelo = carregar_modelo()
